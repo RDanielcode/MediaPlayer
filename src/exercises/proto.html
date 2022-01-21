@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const zelda = {
+        //     name: 'Zelda'
+        // }
+
+        // zelda.hi = function(){ //arrow losses the reference of this, it has to be function
+        //     console.log(`hi im ${this.name}`)
+        // }
+
+        // zelda.hi();
+        
+        // const link = {
+        // name: 'link'
+        // }
+
+        // link.hi = function(){ //arrow losses the reference of this, it has to be function
+        //     console.log(`hi im ${this.name}`)
+        // }
+
+        // link.hi();
+
+        // function Hero (name){
+        //     const hero = {
+        //         name
+        //     }
+
+        //     hero.hi = function (){
+        //         console.log(`hi im ${this.name}`)
+        //     }
+
+        //     return hero;
+        // }
+
+        // const zelda = Hero('zelda');
+        // zelda.hi();
+
+        // const link = Hero('link');
+        // link.hi();
+
+        //using object.create
+
+        // const heroMethods = {
+        //     hi: function (){
+        //         console.log(`hi im ${this.name}`)
+        //     }
+        // }
+
+        // function Hero (name){
+        //     const hero = Object.create(heroMethods);
+        //     hero.name = name;
+        //     return hero;
+        // }
+
+        // const zelda = Hero('zelda');
+        // zelda.hi();
+
+        // const link = Hero('link');
+        // link.hi();
+
+        //using prototype
+
+        // function Hero (name){
+        //     const hero = Object.create(Hero.prototype)
+        //     hero.name = name;
+        //     return hero;
+        // }
+
+        // Hero.prototype.hi = function(){
+        //     console.log(`hi im ${this.name}`)
+        // }
+
+        // const zelda = Hero('zelda');
+        // zelda.hi();
+
+        // const link = Hero('link');
+        // link.hi();
+
+        // now applying new
+
+        function Hero (name){
+            this.name = name;
+        }
+
+        Hero.prototype.hi = function(){
+            console.log(`hi im ${this.name}`)
+        }
+
+        const zelda = new Hero('zelda');
+        zelda.hi();
+
+        const link = new Hero('link');
+        link.hi(); 
+        
+        console.log(`zelda.hasownproperties('name'): ${zelda.hasOwnProperty('name')}`);
+        console.log(`zelda.hasownproperties('hi'): ${zelda.hasOwnProperty('hi')}`);
+
+    </script>
+</body>
+</html>
